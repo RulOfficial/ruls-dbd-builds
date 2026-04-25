@@ -1,6 +1,6 @@
 {
     "name": "Terrorist Build",
-    "perks": ["No Mither", "Invocation: Weaving Spiders", "Resilience", "Déjà Vu"],
+    "perks": ["Déjà Vu", "Invocation: Weaving Spiders", "No Mither", "Resilience"],
     "altperks": ["", "", "", ""],
     "group": "Meme",
     "author": "Pizza"

@@ -1,0 +1,7 @@
+{
+    "name": "Evil Build",
+    "perks": ["Game Afoot", "Rancor", "Blood Warden", "Hex: No One Escapes Death"],
+    "altperks": ["", "", "", ""],
+    "killer": "Dredge",
+    "author": "Rul"
+}

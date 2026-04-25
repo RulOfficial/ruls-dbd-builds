@@ -1,0 +1,7 @@
+{
+    "name": "No Healing Build",
+    "perks": ["A Nurse's Calling", "Deathbound", "Fire Up", "Iron Maiden"],
+    "altperks": ["", "", "", ""],
+    "killer": "Huntress",
+    "author": "Rul"
+}

@@ -1,6 +1,6 @@
 {
     "name": "Bolt Build",
-    "perks": ["Sprint Burst", "Blood Rush", "Vigil", "Ghost Notes"],
+    "perks": ["Blood Rush", "Ghost Notes", "Sprint Burst", "Vigil"],
     "altperks": ["", "", "", ""],
     "group": "Meme",
     "author": "Pizza"

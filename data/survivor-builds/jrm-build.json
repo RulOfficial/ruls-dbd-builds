@@ -1,7 +1,7 @@
 {
     "name": "JRM Build",
-    "perks": ["Counterforce", "Extrasensory Perception", "Overzealous", "Inner Strength"],
-    "altperks": ["", "", "Urban Evasion", "Resilience"],
+    "perks": ["Counterforce", "Extrasensory Perception", "Inner Strength", "Overzealous"],
+    "altperks": ["", "", "Resilience", "Urban Evasion"],
     "group": "Icons",
     "author": "Rul"
 }

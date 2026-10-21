@@ -10,7 +10,7 @@ This project is heavily inspired by [Mr.Tipson's repository](https://github.com/
 Everyone is welcome to contribute! 
 
 ### Adding Builds
-Use the [**Build Builder**](https://rulsofficial.github.io/ruls-dbd-builds/builder) to create your build and submit it as a GitHub issue automatically.
+Use the [**Build Builder**](https://rulofficial.github.io/ruls-dbd-builds/builder) to create your build and submit it as a GitHub issue automatically.
 
 ### Adding Survivor Groups
 To propose a new category in `survivor-groups.json`, [create an issue manually](https://github.com/RulsOfficial/ruls-dbd-builds/issues/new) with the group name and portrait image URL.

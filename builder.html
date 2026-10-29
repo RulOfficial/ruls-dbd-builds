@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rul's Builds - Builder</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/bstyles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">Rul's Builds</a>
+        <nav class="topnav">
+          <a href="index.html">Home</a>
+          <a href="builder.html" class="active">Builder</a>
+        </nav>
+        <div class="userbar">
+          <span id="userInfo">Signed out</span>
+          <a id="loginLink" class="btn-ghost" href="login.html?next=builder.html">Sign in</a>
+          <button id="logoutBtn" class="btn-ghost" type="button" hidden>Sign out</button>
+        </div>
+      </div>
+    </header>
+    <main class="page-shell">
+      <div class="shell-container">
+        <header class="page-hero">
+          <h1>Builder</h1>
+        </header>
+
+        <section class="panel">
+          <div class="panel-body grid-2">
+            <div class="field">
+              <label for="buildName">Name</label>
+              <input id="buildName" placeholder="Name">
+            </div>
+            <div class="field">
+              <label for="author">Author</label>
+              <input id="author" placeholder="Alias">
+            </div>
+            <div class="field">
+              <label for="type">Build type</label>
+              <select id="type">
+                <option value="survivor">Survivor</option>
+                <option value="killer">Killer</option>
+              </select>
+            </div>
+            <div class="field" id="killerBox" style="display:none">
+              <label for="killerInput">Killer</label>
+              <div class="autocomplete">
+                <input id="killerInput" placeholder="Search">
+                <div id="killerList" class="autocomplete-list"></div>
+              </div>
+            </div>
+            <div class="field" id="groupBox">
+              <label for="groupSelect">Group</label>
+              <select id="groupSelect"></select>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Perks</h2>
+          </div>
+          <div class="panel-body">
+            <div id="perkContainer" class="perk-grid"></div>
+          </div>
+        </section>
+
+        <section class="submit-block">
+          <button class="send-big" id="submitBtn">Submit</button>
+        </section>
+      </div>
+    </main>
+    <div class="toast" id="toast"></div>
+    <script type="module" src="js/builder.js"></script>
+    <script type="module" src="js/admin-nav.js"></script>
+  </body>
+</html>

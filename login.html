@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Login - Rul's Builds</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">Rul's Builds</a>
+        <nav class="topnav">
+          <a href="index.html">Home</a>
+          <a href="builder.html">Builder</a>
+        </nav>
+        <div class="nav-actions"></div>
+      </div>
+    </header>
+    <div class="auth-container">
+      <div class="auth-card">
+        <h1>Rul's Builds</h1>
+        <p class="lead">Inicia sesión para enviar builds directamente al panel de moderación.</p>
+        <div class="auth-buttons">
+          <button id="googleBtn" class="auth-btn" type="button">Continuar con Google</button>
+        </div>
+        <p id="loginMsg" class="msg" role="alert"></p>
+        <div class="auth-links">
+          <a href="builder.html">Volver al Builder</a>
+          <a href="index.html">Ir al inicio</a>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/login.js"></script>
+    <script type="module" src="js/admin-nav.js"></script>
+  </body>
+</html>

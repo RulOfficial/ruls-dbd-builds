@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rul's Builds</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">Rul's Builds</a>
+        <nav class="topnav">
+          <a href="index.html" class="active">Home</a>
+          <a href="builder.html">Builder</a>
+        </nav>
+        <div class="nav-actions">
+          <span class="last-updated">Last updated: <span id="changeDate">Loading...</span></span>
+          <div class="role-split">
+            <button type="button" class="role-half active" data-role="killer" aria-label="Killers">
+              <img src="https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/0/06/IconHelpLoading_killer.png" alt="Killers">
+            </button>
+            <button type="button" class="role-half" data-role="survivor" aria-label="Survivors">
+              <img src="https://static.wikia.nocookie.net/deadbydaylight_gamepedia_en/images/b/b3/IconHelpLoading_survivor.png" alt="Survivors">
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="body">
+      <div class="tabs">
+        <div class="killerTab" id="killerTab">
+          <nav id="sidebar">
+            <div class="sidebarTab"></div>
+            <div class="sidebarContent" id="killerSidebar"></div>
+          </nav>
+          <div class="characters" id="killers"></div>
+        </div>
+        <div class="survivorTab" id="survivorTab" style="display:none">
+          <div class="characters" id="survivors"></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+    <script>
+      const sidebarTab = document.querySelector('.sidebarTab');
+      const sidebar = document.getElementById('sidebar');
+      if (sidebarTab && sidebar) {
+        sidebarTab.addEventListener('click', () => {
+          sidebar.classList.toggle('open');
+        });
+      }
+      const roleHalves = document.querySelectorAll('.role-half');
+      const killerTab = document.getElementById('killerTab');
+      const survivorTab = document.getElementById('survivorTab');
+      roleHalves.forEach(btn => {
+        btn.addEventListener('click', () => {
+          roleHalves.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          if (btn.dataset.role === 'killer') {
+            killerTab.style.display = 'block';
+            survivorTab.style.display = 'none';
+          } else {
+            killerTab.style.display = 'none';
+            survivorTab.style.display = 'block';
+          }
+        });
+      });
+    </script>
+    <script type="module" src="js/admin-nav.js"></script>
+  </body>
+</html>

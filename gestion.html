@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Management - Rul's Builds</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/gestion.css">
+    <link rel="stylesheet" href="css/bstyles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">Rul's Builds</a>
+        <nav class="topnav">
+          <a href="index.html">Home</a>
+          <a href="builder.html">Builder</a>
+          <a href="gestion.html" class="active">Management</a>
+        </nav>
+        <div class="userbar">
+          <span>Connected: <strong id="userEmail"></strong></span>
+          <button id="logoutBtn" class="btn-ghost" type="button">Sign out</button>
+        </div>
+      </div>
+    </header>
+    <main class="page-shell">
+      <div class="shell-container wide">
+        <header class="page-hero">
+          <h1>Management</h1>
+        </header>
+        <p id="loading" class="muted">Checking session...</p>
+        <section id="editorView" hidden>
+          <section class="panel">
+            <div class="panel-header split">
+              <div class="tabs" role="tablist">
+                <button type="button" class="tab active" data-tab="pending">Pending <span id="pendingCount">0</span></button>
+                <button type="button" class="tab" data-tab="approved">Approved <span id="approvedCount">0</span></button>
+              </div>
+              <div class="filters">
+                <select id="typeFilter">
+                  <option value="all">All</option>
+                  <option value="killer">Killers</option>
+                  <option value="survivor">Survivors</option>
+                  <option value="group">Groups</option>
+                </select>
+                <input id="search" class="search" type="search" placeholder="Search" autocomplete="off">
+              </div>
+            </div>
+            <p id="loadMsg" class="panel-note" role="alert"></p>
+            <div id="pendingView">
+              <ul id="pendingList" class="list"></ul>
+            </div>
+            <div id="approvedView" hidden>
+              <ul id="approvedList" class="list"></ul>
+            </div>
+            <p id="emptyMsg" class="panel-empty" hidden></p>
+          </section>
+        </section>
+      </div>
+    </main>
+    <div id="editModal" class="edit-modal" hidden>
+      <div class="edit-dialog panel" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+        <div class="panel-header split">
+          <h2 id="editTitle">Edit build</h2>
+          <button id="closeEditBtn" class="btn-ghost" type="button">Close</button>
+        </div>
+        <form id="editForm">
+          <div class="panel-body grid-2">
+            <div id="editIdBox" class="field">
+              <label for="editId">Database ID</label>
+              <input id="editId" required pattern="[a-zA-Z0-9_-]+" autocomplete="off">
+            </div>
+            <div id="editNameBox" class="field">
+              <label id="editNameLabel" for="editName">Name</label>
+              <input id="editName" required autocomplete="off">
+            </div>
+            <div id="editAuthorBox" class="field">
+              <label for="editAuthor">Author</label>
+              <input id="editAuthor" autocomplete="off">
+            </div>
+            <div id="editTypeBox" class="field">
+              <label for="editType">Build type</label>
+              <select id="editType">
+                <option value="survivor">Survivor</option>
+                <option value="killer">Killer</option>
+                <option value="group">Group</option>
+              </select>
+            </div>
+            <div id="editKillerBox" class="field">
+              <label for="editKiller">Killer</label>
+              <div class="autocomplete">
+                <input id="editKiller" autocomplete="off">
+                <div id="editKillerList" class="autocomplete-list"></div>
+              </div>
+            </div>
+            <div id="editGroupBox" class="field">
+              <label for="editGroup">Group</label>
+              <select id="editGroup"></select>
+            </div>
+            <div id="editPortraitBox" class="field">
+              <label for="editPortrait">Portrait URL</label>
+              <input id="editPortrait" type="url" autocomplete="off">
+            </div>
+          </div>
+          <div id="editPerksSection">
+            <div class="panel-header"><h2>Perks</h2></div>
+          <div id="editPerkContainer" class="panel-body edit-perks"></div>
+            <div class="panel-header"><h2>Alternative perks</h2></div>
+            <div id="editAltPerkContainer" class="panel-body edit-perks"></div>
+          </div>
+          <div class="edit-form-actions">
+            <button id="cancelEditBtn" class="btn-ghost" type="button">Cancel</button>
+            <button class="btn-save" type="submit">Save changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="toast" class="toast"></div>
+    <script type="module" src="js/gestion.js"></script>
+  </body>
+</html>
